@@ -1,3 +1,6 @@
+# MAC files
+.DS_Store
+
 # Data
 /data/temp
 /data/processed
