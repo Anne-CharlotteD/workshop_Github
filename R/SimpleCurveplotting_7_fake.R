@@ -177,9 +177,9 @@ plot_calibration_exclusions <- function(final_table) {
 #---------------------------
 
 # Load the data
-valdata_VPA_POS <- read.table("data/Apolar_validation_fake/p2024_051_POS_VPA_fake.csv", header = TRUE, sep = ",")
-valdata_VPB_POS <- read.table("data/Apolar_validation_fake/p2024_051_POS_VPB_fake.csv", header = TRUE, sep = ",")
-valdata_VPCD_POS <- read.table("data/Apolar_validation_fake/p2024_051_POS_VPCD_fake.csv", header = TRUE, sep = ",")
+valdata_VPA_POS <- read.table("data/example/Apolar_validation_fake/p2024_051_POS_VPA_fake.csv", header = TRUE, sep = ",")
+valdata_VPB_POS <- read.table("data/example/Apolar_validation_fake/p2024_051_POS_VPB_fake.csv", header = TRUE, sep = ",")
+valdata_VPCD_POS <- read.table("data/example/Apolar_validation_fake/p2024_051_POS_VPCD_fake.csv", header = TRUE, sep = ",")
 
 # Define which validation plate to check, so run 1 of the 3 lines below
 validation_plate <- "Validation plate A"
@@ -195,12 +195,12 @@ if (validation_plate == "Validation plate A") {
 }
 
 #Load the targets
-targets_POS <- read.table("data/Apolar_validation_fake/20250315_valtargets_XAB_positive_fake.csv", header = TRUE, sep = ",")
+targets_POS <- read.table("data/example/Apolar_validation_fake/20250315_valtargets_XAB_positive_fake.csv", header = TRUE, sep = ",")
 targets <- targets_POS %>%
   select(compound, MAC_mix)
 
 # Load the concentrations
-CAL_conc <- read.table("data/Apolar_validation_fake/CAL_level_concentrations.csv", header = TRUE, sep = ",") %>%
+CAL_conc <- read.table("data/example/Apolar_validation_fake/CAL_level_concentrations.csv", header = TRUE, sep = ",") %>%
   mutate(MAC_mix = as.character(MAC_mix),
          cal_level = as.character(cal_level),
          Conc = concentration_ngpmL)
